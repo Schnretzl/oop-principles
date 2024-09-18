@@ -2,10 +2,7 @@
 
 
 # Task 1: Define Budget Category Class Create a class `BudgetCategory` with private attributes for category name and allocated budget.
-class BudgetCategory:
-    def __init__(self, __category, __allocated_budget = 0):
-        self.__category = __category
-        self.__allocated_budget = __allocated_budget
+# Task 2: Implement Getters and Setters - Write getter and setter methods for both the category name and the allocated budget.        
 
 food_category = BudgetCategory("Food", 500)
 food_category.add_expense(100)
