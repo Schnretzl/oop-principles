@@ -16,7 +16,16 @@ class BudgetCategory:
             print("Invalid category name")
             
     def set_allocated_budget(self, new_budget):
-        try:
-            self.__allocated_budget = new_budget if new_budget >= 0 else self.__allocated_budget
-        except:
+        if isinstance(new_budget, int) and new_budget >= 0:
+            self.__allocated_budget = new_budget
+        else:
             print("Invalid budget amount")
+            
+    def add_expense(self, expense):
+        if isinstance(expense, int) and expense >= 0:
+            if expense > self.__allocated_budget:
+                print("Expense exceeds allocated budget")
+            else:
+                self.__allocated_budget -= expense
+        else:
+            print("Invalid expense amount")
